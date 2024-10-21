@@ -40,10 +40,10 @@ jobs:
               git commit -m "Automated commit message"
         - name: Push changes
           env:
-            #GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
-             GITHUB_TOKEN: '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'
+            GITHUB_TOKEN: ${{ secrets.PAT_BURGERAPI }}
+            #GITHUB_TOKEN: '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'
           run: |
-                git push origin main      
+                git push origin develop      
 
         - name: Pause for debugging
           run: sleep 300 
