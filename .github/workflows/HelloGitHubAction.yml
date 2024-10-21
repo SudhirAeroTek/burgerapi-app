@@ -28,7 +28,7 @@ jobs:
         - name: replace artifact version
           run: |
             #sed -i 's/<version>.*<\/version>/<version>new_version<\/version>/' pom.xml
-            xmlstarlet ed -L -u "/project/version" -v "2.0.0-SNAPSHOT" path/to/pom.xml
+            xmlstarlet ed -L -u "/project/version" -v "2.0.0-SNAPSHOT" pom.xml
 
         - name: Configure Git
           run: |
