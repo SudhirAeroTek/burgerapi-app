@@ -23,17 +23,23 @@ jobs:
           run: echo "sudhir printed"
 
         - name: Install xmlstarlet
-          run: sudo apt-get install -y xmlstarlet  
+          run: sudo apt-get install -y xmlstarlet
+
+        - name: Configure Git
+          run: |
+            git config --global user.name 'sudhirkilani1431987'
+            git config --global user.email 'sudhir.kilani1431987@gmail.com' 
+
+        - name: Create and switch to develop branch
+          run: |
+              git checkout -b develop
 
         - name: replace artifact version
           run: |
             #sed -i 's/<version>.*<\/version>/<version>new_version<\/version>/' pom.xml
             xmlstarlet ed -L -u "/project/version" -v "2.0.0-SNAPSHOT" pom.xml
 
-        - name: Configure Git
-          run: |
-            git config --global user.name 'sudhirkilani1431987'
-            git config --global user.email 'sudhir.kilani1431987@gmail.com' 
+        
         - name: Commit changes
           run: |
               git add .
