@@ -40,7 +40,7 @@ jobs:
               git commit -m "Automated commit message"
         - name: Push changes
           env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
           run: |
                 git push origin main      
 
