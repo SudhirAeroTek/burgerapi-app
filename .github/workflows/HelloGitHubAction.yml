@@ -50,7 +50,7 @@ jobs:
             #GITHUB_TOKEN: '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'
           run: |
                 #git push origin develop
-                git push https://sudhirkilani1431987:${GH_PAT}@github.com/sudhirkilani1431987/burgerapi-app.git
+                git push git@github.com:SudhirAeroTek/burgerapi-app.git
 
         - name: Pause for debugging
           run: sleep 300 
